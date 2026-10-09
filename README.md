@@ -1,6 +1,6 @@
 <div align="center">
 
-![fee-bump-studio-backend banner](assets/banner.svg)
+![FeeBumpStudio Backend banner](assets/banner.svg)
 
 # FeeBumpStudio Backend
 
@@ -18,13 +18,9 @@
 
 ## Why this exists
 
-A developer workflow for **inspecting a transaction, estimating a replacement fee,
-preparing fee-bump envelopes, and keeping the original transaction intent visible
-for review**.
+A developer workflow for **inspecting a transaction, estimating a replacement fee, preparing fee-bump envelopes, and keeping the original transaction intent visible for review**.
 
-The backend exists to handle work that should not happen in a browser: indexing,
-normalization, scheduled checks, API aggregation, persistence, reconciliation, and
-operational diagnostics. **It does not custody user signing keys.**
+The backend exists to handle work that should not happen in a browser: indexing, normalization, scheduled checks, API aggregation, persistence, reconciliation, and operational diagnostics. **It does not custody user signing keys.**
 
 ### Where this repo fits
 
@@ -38,15 +34,12 @@ operational diagnostics. **It does not custody user signing keys.**
 
 - **API:** exposes read models and controlled application operations
 - **Indexer/jobs:** consumes Stellar data and converts it into application-friendly records
-- **Storage:** keeps operational data off-chain while retaining references to verifiable
-  Stellar events
+- **Storage:** keeps operational data off-chain while retaining references to verifiable Stellar events
 - **Observability:** records failures and processing latency without storing secrets
-- **Idempotency by design:** reprocessing the same Stellar event converges to the same
-  state; a network timeout must never silently create a duplicate business record
+- **Idempotency by design:** reprocessing the same Stellar event converges to the same state; a network timeout must never silently create a duplicate business record
 - Built-in `GET /health` endpoint for readiness checks
 
-> ⚠️ **Status:** this is a development baseline. It is **not audited** and **not
-> production-ready**. Do not use it with mainnet funds or production credentials.
+> ⚠️ **Status:** this is a development baseline. It is **not audited** and **not production-ready**. Do not use it with mainnet funds or production credentials.
 
 ## Architecture
 
@@ -144,19 +137,15 @@ There is no build step — plain Node. For production:
 
 ## Contributing
 
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before
-opening a PR.
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a PR.
 
 ## Security
 
-Please report vulnerabilities privately instead of filing public issues — see
-[SECURITY.md](SECURITY.md).
+Please report vulnerabilities privately instead of filing public issues — see [SECURITY.md](SECURITY.md).
 
 ## Code of Conduct
 
-Be kind and respectful. This project follows contributor norms of good conduct as
-described in [CONTRIBUTING.md](CONTRIBUTING.md); a dedicated Code of Conduct file is
-coming as the community grows.
+Be kind and respectful. This project follows contributor norms of good conduct as described in [CONTRIBUTING.md](CONTRIBUTING.md); a dedicated Code of Conduct file is coming as the community grows.
 
 ## Maintainer
 

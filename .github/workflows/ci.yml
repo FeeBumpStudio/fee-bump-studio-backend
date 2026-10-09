@@ -15,6 +15,7 @@ jobs:
           test -f README.md
           test -f SECURITY.md
           test -f CONTRIBUTING.md
+          test -f CODE_OF_CONDUCT.md
           test -f LICENSE
           test -f .env.example
       - name: Set up Node
@@ -23,6 +24,21 @@ jobs:
           node-version: 20
           cache: npm
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Test
         run: npm test
+
+  # Optional: Add lint job if a linter is configured
+  # lint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Set up Node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+  #         cache: npm
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: Lint
+  #       run: npm run lint
