@@ -41,6 +41,19 @@ The backend exists to handle work that should not happen in a browser: indexing,
 
 > ⚠️ **Status:** this is a development baseline. It is **not audited** and **not production-ready**. Do not use it with mainnet funds or production credentials.
 
+## Documentation
+
+📖 **Full documentation:** [https://feebumpstudio.github.io/fee-bump-studio-backend/](https://feebumpstudio.github.io/fee-bump-studio-backend/)
+
+The documentation site includes:
+- Getting Started guides
+- Architecture overview and data flow
+- API Reference with HTTP endpoints
+- Configuration reference
+- Operations guides (deployment, monitoring, runbook)
+- Development guides
+- Security and FAQ
+
 ## Architecture
 
 ```mermaid

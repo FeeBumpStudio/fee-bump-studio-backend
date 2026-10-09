@@ -1,0 +1,117 @@
+site_name: FeeBumpStudio Backend
+site_description: The service & indexing layer behind FeeBumpStudio
+site_url: https://feebumpstudio.github.io/fee-bump-studio-backend/
+repo_url: https://github.com/FeeBumpStudio/fee-bump-studio-backend
+repo_name: FeeBumpStudio/fee-bump-studio-backend
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 <a href="https://github.com/Jubilee-001">Jubilee</a>
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Prerequisites: getting-started/prerequisites.md
+      - Installation: getting-started/installation.md
+      - Configuration: getting-started/configuration.md
+      - First Run: getting-started/first-run.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - Data Flow: architecture/data-flow.md
+      - Components: architecture/components.md
+  - API Reference:
+      - HTTP API: api-reference/http-api.md
+      - Health Endpoint: api-reference/health.md
+      - Stellar Ingestion: api-reference/stellar-ingestion.md
+  - Configuration:
+      - Environment Variables: configuration/environment-variables.md
+      - Network Settings: configuration/network-settings.md
+      - Database: configuration/database.md
+  - Operations:
+      - Deployment: operations/deployment.md
+      - Monitoring: operations/monitoring.md
+      - Runbook: operations/runbook.md
+      - Scaling: operations/scaling.md
+  - Development:
+      - Local Development: development/local-development.md
+      - Testing: development/testing.md
+      - Adding Endpoints: development/adding-endpoints.md
+      - Contributing: development/contributing.md
+  - Security:
+      - Responsible Disclosure: security/responsible-disclosure.md
+      - Assumptions: security/assumptions.md
+      - Limitations: security/limitations.md
+  - FAQ: faq.md
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: green
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+  - minify:
+      minify_html: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/FeeBumpStudio/fee-bump-studio-backend
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/feebumpstudio
+  version:
+    provider: mike
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mermaid.js

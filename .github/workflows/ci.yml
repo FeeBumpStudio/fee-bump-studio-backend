@@ -28,6 +28,24 @@ jobs:
       - name: Test
         run: npm test
 
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin pymdown-extensions
+      - name: Build documentation
+        run: mkdocs build --strict
+
   # Optional: Add lint job if a linter is configured
   # lint:
   #   runs-on: ubuntu-latest
