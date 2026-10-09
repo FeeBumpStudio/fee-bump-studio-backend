@@ -1,12 +1,28 @@
 name: CI
+
 on:
   push:
+    branches: [main]
   pull_request:
+
 jobs:
   structure:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: test -f README.md
-      - run: test -f SECURITY.md
-      - run: test -f CONTRIBUTING.md
+      - name: Check required docs exist
+        run: |
+          test -f README.md
+          test -f SECURITY.md
+          test -f CONTRIBUTING.md
+          test -f LICENSE
+          test -f .env.example
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Test
+        run: npm test
